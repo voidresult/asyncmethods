@@ -7,8 +7,23 @@ namespace RequestSender
 {
     class Program
     {
+        static async void CheckVoid() {
+            throw new Exception("testing exception"); 
+            
+        }
+        static async Task CheckVoidTask()
+        {
+            throw new Exception("testing exception");
+        }
         static async Task Main(string[] args)
         {
+            try {
+                CheckVoid();
+            }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
+
             HttpClient httpClient = new HttpClient();
             httpClient.Timeout = TimeSpan.FromSeconds(10);
             Console.WriteLine("Press 1 to async, 2 to sync OR ESC to exit");
