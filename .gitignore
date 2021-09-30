@@ -1,0 +1,11 @@
+Bin
+obj
+ClientBin
+Generated_Code
+*.suo
+*.user
+.vs
+/.idea
+packages
+nuget.config
+appsettings.Development.json
